@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
-
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="zh">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>我爱你</title>
-<link type="text/css" rel="stylesheet" href="renxi/default.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Material Design隐藏侧边栏网页布局模板</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,700">
+  	<link rel="stylesheet" href="css/style.min.css">
+  	<link type="text/css" rel="stylesheet" href="renxi/default.css">
 <script type="text/javascript" src="renxi/jquery.min.js"></script>
 <script type="text/javascript" src="renxi/jscex.min.js"></script>
 <script type="text/javascript" src="renxi/jscex-parser.js"></script>
@@ -21,9 +25,13 @@
 }
 -->
 </style>
+	<!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
 </head>
 <body>
-<audio autoplay="autopaly">
+	<div id="wrapper" class="wrapper">
+	  	<audio autoplay="autopaly">
   <source src="renxi.mp3" type="audio/mp3" />
 </audio>
 <div id="main">
@@ -61,7 +69,7 @@
     <div id="clock-box"> <span class="STYLE1"></span><font color="#FF4500">亲爱的宝宝，我爱你</font> <span class="STYLE1">已经是……</span>
       <div id="clock"></div>
     </div>
-    <canvas id="canvas" width="1100" height="680"></canvas>
+    <canvas id="canvas" width="80%" height="680"></canvas>
   </div>
 </div>
 <script>
@@ -192,15 +200,13 @@
                 $await(Jscex.Async.sleep(25));
             }
         }));
-
         var textAnimate = eval(Jscex.compile("async", function () {
             var together = new Date();
-            together.setFullYear(2010, 3,1); 			//时间年月日
-            together.setHours(16);						//小时	
-            together.setMinutes(53);					//分钟
+            together.setFullYear(2017 ,2-1 , 2); 			//时间年月日
+            together.setHours(0);						//小时	
+            together.setMinutes(0);					//分钟
             together.setSeconds(0);					//秒前一位
             together.setMilliseconds(2);				//秒第二位
-
             $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
             while (true) {
@@ -225,5 +231,32 @@
     </script>
 
 
+
+	</div><!-- /wrapper -->
+
+	<button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
+	<nav id="mm-menu" class="mm-menu">
+	  <div class="mm-menu__header">
+	    <h2 class="mm-menu__title">导航</h2>
+	  </div>
+	  <ul class="mm-menu__items">
+	    <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="welcome.html">
+	        <span class="mm-menu__link-text"><i class="md md-home"></i> Home</span>
+	      </a>
+	    </li>
+	    <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="./photo/index.html">
+	        <span class="mm-menu__link-text"><i class="md md-person"></i> 相册</span>
+	      </a>
+	    </li>
+	   
+	  </ul>
+	</nav><!-- /nav -->
+	
+	<script src="js/production/materialMenu.min.js"></script>
+	<script>
+	  var menu = new Menu;
+	</script>
 </body>
 </html>
