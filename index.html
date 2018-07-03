@@ -2,258 +2,92 @@
 
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>给宝宝的。。。</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!-- <link rel="stylesheet" type="text/css" href="./css/default.css"> -->
-  	<link rel="stylesheet" href="./css/style.min.css">
-  	<!-- <link type="text/css" rel="stylesheet" href="./renxi/default.css"> -->
-<link type="text/css" rel="stylesheet" href="./renxi/default.css">
-<script type="text/javascript" src="./renxi/jquery.min.js"></script>
-<script type="text/javascript" src="./renxi/jscex.min.js"></script>
-<script type="text/javascript" src="./renxi/jscex-parser.js"></script>
-<script type="text/javascript" src="./renxi/jscex-jit.js"></script>
-<script type="text/javascript" src="./renxi/jscex-builderbase.min.js"></script>
-<script type="text/javascript" src="./renxi/jscex-async.min.js"></script>
-<script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
-<script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
-<script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width = device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+
+
+<title>吕磊的博客</title>
 <style type="text/css">
-.STYLE1 {
-	color: #666666
-}
+    canvas {display: block;}
+	html
+	{
+	background:black;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	}
 </style>
-	<!--[if IE]>
-		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
-	<![endif]-->
 </head>
 <body>
-	<div id="wrapper" class="wrapper">
-	  	<audio autoplay="autopaly">
-  <source src="renxi.mp3" type="audio/mp3" />
-</audio>
-<div id="main">
-  <div id="wrap">
-    <div id="text">
-      <div id="code"> <font color="#FF0000"> <span class="say">亲爱的宝宝，我爱你</span><br>
-        <span class="say"> </span><br>
-        <span class="say"> 我知道我不会甜言蜜语，</span><br>
-        <span class="say"> </span><br>
-        <span class="say"> 但是我会用行动证明一切</span><br>
-        <span class="say"> </span><br>
-        <span class="say">你说我啰嗦，</span><br>             
-            <span class="say"> 有些东西因为越在乎所以越怕失去</span><br>
-            <span class="say"> </span><br>
-        <span class="say">因为我太爱你了，所以我害怕失去你</span><br>
-                <span class="say"> </span><br>
-        <span class="say">因为我太爱你了，所以我对你总啰嗦</span><br>
-                <span class="say"> </span><br>
-        <span class="say">希望可以执子之手，与子偕老</span><br>
-                <span class="say"> </span><br>
-        <span class="say">如果上天让我许三个愿望，</span><br>
-                <span class="say">第一个是今生今世和你在一起， </span><br>
-             <span class="say"> </span><br>
-             <span class="say"> 第二个是再生再世和你在一起，</span><br>
-             <span class="say"> </span><br>
-             <span class="say">第三个是永生永世和你不分离 </span><br>
-        <span class="say"><span class="space"></span> -- 爱你的老公</span> </font>
-            <br />
-            <br />
-        </p>
-      </div>
-    </div>
-    
-    <div id="clock-box"> <span class="STYLE1"></span><font color="#FF4500">亲爱的宝宝，我爱你</font> <span class="STYLE1">已经是……</span>
-      <div id="clock"></div>
-    </div>
-    <canvas id="canvas" width="80%" height="680"></canvas>
-  </div>
-</div>
-<script>
-    </script>
-<script>
-    (function () {
-        var canvas = $('#canvas');
+  <canvas id="c">
+  <script type="text/javascript">
+		window.onload=function()
+		{
+			var c = document.getElementById("c");
+			var ctx = c.getContext("2d");
 
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;
-        }
+			c.addEventListener('click', function(e)
+			{
+				location.href="welcome.html";
+			}, false);
 
-        var width = canvas.width();
-        var height = canvas.height();
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]]
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
+			//全屏显示
+			c.height = window.innerHeight;
+			c.width = window.innerWidth;
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+			var txts = "052あ7B8い甘GANE士CHENG成う1え9お甘かき士くけこ成EFCADG甘HIJK士LMNO成PQRSTU甘VWXYZE士FCADGH成IJKLM";
+			txts = txts.split("");
 
-        canvas.click(function (e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0;
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function (e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
+			var font_size = 28;
+			var columns = c.width/font_size;
 
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
+			//每行要输出数组
+			var drops = [];
 
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
+			for(var x = 0; x < columns; x++)
+				drops[x] = 1;
 
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
+			//字符随机颜色
+			var wh_color = new Array();
+			wh_color[0]="#57CE13";
+			wh_color[1]="#50BF7F";
+			wh_color[2]="#50BF7F";
 
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
+			//绘出字符
+			function draw()
+			{
+				//黑色背景，半透明显示
+				ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
+				ctx.fillRect(0, 0, c.width, c.height);
 
-            // 会有闪烁不得意这样做, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
+				//ctx.fillStyle = "#50BF7F";
+				ctx.fillStyle = wh_color[parseInt(Math.random()*100+1)%3];
+				ctx.font = font_size + "px arial";
 
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-        var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date();
-            together.setFullYear(2017 ,2-1 , 2); 			//时间年月日
-            together.setHours(0);						//小时	
-            together.setMinutes(0);					//分钟
-            together.setSeconds(0);					//秒前一位
-            together.setMilliseconds(2);				//秒第二位
-            $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
+				//drops循环
+				for(var i = 0; i < drops.length; i++)
+				{
+					//随机打印字符
+					var text = txts[Math.floor(Math.random()*txts.length)];
 
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
+					//x = i*font_size
+					//y = value of drops[i]*font_size
+					ctx.fillText(text, i*font_size, drops[i]*font_size);
 
-            textAnimate().start();
+					if(drops[i]*font_size > c.height || Math.random() > 0.95)
+						drops[i] = 0;
 
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-    </script>
-
-
-
-	</div><!-- /wrapper -->
-
-	<button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
-	<nav id="mm-menu" class="mm-menu">
-	  <div class="mm-menu__header">
-	    <h2 class="mm-menu__title">导航</h2>
-	  </div>
-	  <ul class="mm-menu__items">
-	    <li class="mm-menu__item">
-	      <a class="mm-menu__link" href="welcome.html">
-	        <span class="mm-menu__link-text"><i class="md md-home"></i> Home</span>
-	      </a>
-	    </li>
-	    <li class="mm-menu__item">
-	      <a class="mm-menu__link" href="./dist/index.html">
-	        <span class="mm-menu__link-text"><i class="md md-person"></i> 相册</span>
-	      </a>
-	    </li>
-	   
-	  </ul>
-	</nav><!-- /nav -->
-	
-	<script src="js/production/materialMenu.min.js"></script>
-	<script>
-	  var menu = new Menu;
-	</script>
+					//Y坐标增加
+					drops[i]++;
+				}
+			}
+			setInterval(draw, 50);
+		}
+</script>
 </body>
 </html>
